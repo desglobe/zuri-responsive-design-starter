@@ -10,7 +10,19 @@
 <body>
     <div class="nav-bar">
         <div class="logo">Snapshot</div>
-        <ul class="nav-links">
+        <div class="hambuger">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+                open
+            </a>
+        </div>
+        <ul class="nav-links"  id="myTopnav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="nav-links-responsive"  id="myTopnav-responsive">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Gallery</a></li>
@@ -20,7 +32,7 @@
 
     <!-- Hero section -->
 
-    <div class="hero-section">
+    <div class="hero-section" id="hero-s">
         <div class="hero-content-heading">
             <h3>Let's take a snapshot</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero beatae quod molestias voluptas nam <br> facere numquam quos pariatur repellendus excepturi!</p>
@@ -103,5 +115,24 @@
         </div>
         <h6>Copyright &copy; 2021 Zuri Training.</h6>
     </div>
+
+    <script>
+        var x = document.getElementById("myTopnav");
+        var y = document.getElementById("myTopnav-responsive");
+        var z = document.getElementById("hero-s");
+        function myFunction() {
+            x.style.display = 'none';
+            y.style.display = 'flex';
+        }
+        
+        z.addEventListener('click', function(e){
+            // console.log(y);
+            if(y.style.display === 'flex'){
+                y.style.display = 'none'
+                x.style.display = 'flex';
+            }
+            // alert('working')
+        })
+    </script>
 </body>
 </html>
